@@ -15,6 +15,16 @@ document.getElementById("CreateBlockBtn").addEventListener("click", () => {
     createBlock(w,l,h);
 });
 
+
+document.getElementById("CreateCylinderBtn").addEventListener("click",()=>
+{
+    const r = Number(document.getElementById("Radius".value));
+    const h=Number(document.getElementById("Cylinder Height".value));
+
+    
+})
+
 document.getElementById("CreateCylinderBtn").addEventListener("click",()=>{
     console.log('create cylinder clicked')
+
 })
