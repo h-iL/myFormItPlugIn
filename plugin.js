@@ -14,3 +14,7 @@ document.getElementById("CreateBlockBtn").addEventListener("click", () => {
 
     createBlock(w,l,h);
 });
+
+document.getElementById("CreateCylinderBtn").addEventListener("click",()=>{
+    console.log('create cylinder clicked')
+})
