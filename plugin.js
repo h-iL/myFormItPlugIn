@@ -15,16 +15,23 @@ document.getElementById("CreateBlockBtn").addEventListener("click", () => {
     createBlock(w,l,h);
 });
 
-
-document.getElementById("CreateCylinderBtn").addEventListener("click",()=>
+const createCylinder = async (r,h) =>
 {
-    const r = Number(document.getElementById("Radius".value));
-    const h=Number(document.getElementById("Cylinder Height".value));
+    const posCenter = await WSM.Geom.Point3d(0,0,0);
 
-    
-})
+    const histID = await FormIt.GroupEdit.GetEditingHistoryID();
+    console.log(histID,posCenter,r,h);
 
-document.getElementById("CreateCylinderBtn").addEventListener("click",()=>{
+    const cyl = await WSM.APICreateCylinder(histID,posCenter,r,h);
+}
+
+document.getElementById("CreateCylinderBtn").addEventListener("click", ()=>
+{
     console.log('create cylinder clicked')
 
-})
+    const r = Number(document.getElementById("Radius").value);
+    const h = Number(document.getElementById("CHeight").value);
+
+    createCylinder(r,h);
+
+});
